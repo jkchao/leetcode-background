@@ -1,3 +1,10 @@
+// @ts-check
+/**
+ * 
+ * @param {number[]} nums 
+ * @param {number} target 
+ * @returns 
+ */
 const twoSum = function(nums, target) {
     const map = new Map();
     map.set(nums[0], 0);
