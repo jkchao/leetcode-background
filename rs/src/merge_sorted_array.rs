@@ -1,6 +1,5 @@
 #[allow(dead_code)]
 pub fn merge_sorted_arrays(nums1: &mut Vec<i32>, m: i32, nums2: Vec<i32>, n: i32) {
-
     let mut i = m - 1;
     let mut j = n - 1;
     let mut t = m + n - 1;
