@@ -1,5 +1,5 @@
 [package]
-name = "rs"
+name = "leet_code"
 version = "0.1.0"
 authors = ["wenchao.guo <wenchao.guo@wz-inc.com>"]
 edition = "2018"
