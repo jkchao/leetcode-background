@@ -18,7 +18,6 @@ pub fn merge_sorted_arrays(nums1: &mut Vec<i32>, m: i32, nums2: Vec<i32>, n: i32
             j -= 1;
         }
     }
-
 }
 
 #[test]
