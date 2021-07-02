@@ -1,29 +1,46 @@
+use std::rc::Rc;
+use std::cell::RefCell;
 
-struct TreeNode {
-    val: i32,
-    left: Option<Box<TreeNode>>,
-    right: Option<Box<TreeNode>>
+pub struct TreeNode {
+    pub val: i32,
+    pub left: Option<Rc<RefCell<TreeNode>>>,
+    pub right: Option<Rc<RefCell<TreeNode>>>,
 }
 
-fn dps(root: Option<Box<TreeNode>>, total: i32) -> i32 {
+fn dps(root: Option<Rc<RefCell<TreeNode>>>, mut total: i32) -> i32 {
     if let Some(node) = root {
-        total = 10 * node.val + total;
+        total = node.borrow().val + total * 10;
 
-        if node.left.is_none() {
-            if node.right.is_none() {
-                return total
-            }
+        if node.borrow().left.is_none() && node.borrow().right.is_none() {
+            return total
         }
 
-
-        return dps(node.left, total) + dps(node.right, total);
+        return dps(node.borrow().left.clone(), total) + dps(node.borrow().right.clone(), total);
     }  else {
         return 0;
     }
-
-
 }
 
-pub fn sum_numbers(root: TreeNode) -> i32 {
-    dps(Some(Box::new(root)), 0)
+#[allow(dead_code)]
+pub fn sum_numbers(root: Option<Rc<RefCell<TreeNode>>>) -> i32 {
+    dps(root, 0)
+}
+
+#[test]
+fn internal() {
+    let node = TreeNode {
+        val: 1,
+        left: Some(Rc::new(RefCell::new(TreeNode {
+            val: 2,
+            left: None,
+            right: None
+        }))),
+        right: Some(Rc::new(RefCell::new(TreeNode {
+            val: 3,
+            left: None,
+            right: None
+        })))
+    };
+    let n = sum_numbers(Some(Rc::new(RefCell::new(node))));
+    assert_eq!(n, 25);
 }
