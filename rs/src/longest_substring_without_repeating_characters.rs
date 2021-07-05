@@ -22,7 +22,6 @@ pub fn longest_substring_without_repeating_characters(s: String) -> i32 {
             hash_set.remove(&cv[i - 1]);
         }
 
-
         while _l < length {
             if hash_set.contains(&cv[_l]) {
                 break;
