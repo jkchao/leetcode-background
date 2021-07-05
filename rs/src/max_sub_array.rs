@@ -3,11 +3,8 @@ pub fn max_sub_array(nums: Vec<i32>) -> i32 {
     let mut res = nums[0];
     let mut pre = nums[0];
 
-    for (num, &i) in nums.iter() .enumerate() {
-        if num == 0 {
-            continue;
-        }
-        pre = (pre + i).max(i);
+    for i in 1..nums.len() {
+        pre = (pre + nums[i]).max(nums[i]);
         res = res.max(pre);
     }
     res
