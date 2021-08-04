@@ -31,13 +31,13 @@ var hasPathSum = function (root, targetSum) {
 };
 
 function dfs(node, rest) {
-    if (!node.left && !node.right && rest === 0) {
+    if (!node.left && !node.right && rest === node.val) {
         return true;
     }
-    if (node.left && dfs(node.left, rest - node.left.val)) {
+    if (node.left && dfs(node.left, rest - node.val)) {
         return true;
     }
-    if (node.right && dfs(node.right, rest - node.right.val)) {
+    if (node.right && dfs(node.right, rest - node.val)) {
         return true;
     }
 

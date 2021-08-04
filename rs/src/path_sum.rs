@@ -12,34 +12,17 @@ pub struct TreeNode {
 pub fn has_path_sum(root: Option<Rc<RefCell<TreeNode>>>, target_sum: i32) -> bool {
 
     if let Some(node) = root {
-        return dps(node.clone(), target_sum - node.clone().borrow().val);
-    };
 
-    return false;
-}
-
-fn dps(root: Rc<RefCell<TreeNode>>, rest: i32) -> bool {
-
-    let left_node = root.borrow().left.clone();
-    let right_node = root.borrow().right.clone();
-
-    if left_node.is_none() && right_node.is_none() && rest == 0 {
-        return true;
-    }
-
-    if let Some(node) = left_node {
-        if dps(node.clone(), rest - node.clone().borrow().val) {
+        if node.borrow().left.is_none() && node.borrow().right.is_none() && target_sum == node.borrow().val {
             return true;
         }
+
+        return has_path_sum(node.borrow().left.clone(), target_sum - node.borrow().val) || has_path_sum(node.borrow().right.clone(), target_sum - node.borrow().val)
     }
 
-    if let Some(node) = right_node {
-       if dps(node.clone(), rest - node.clone().borrow().val) {
-           return true;
-       }
-    }
 
     return false;
+
 }
 
 
