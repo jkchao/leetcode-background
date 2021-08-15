@@ -6,6 +6,8 @@ mod two_sum;
 
 mod path_sum;
 
+mod compare_version_numbers;
+
 fn main() {
     println!("hello rust");
 }
