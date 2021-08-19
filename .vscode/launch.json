@@ -54,7 +54,8 @@
             "request": "launch",
             "name": "Debut JavaScript",
             "cwd": "${workspaceFolder}/js",
-            "program": "${file}"
+            "program": "${file}",
+            "runtimeExecutable": "/Users/guowenchao/.nvm/versions/node/v14.15.0/bin/node"
         }
     ]
 }
