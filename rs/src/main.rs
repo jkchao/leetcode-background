@@ -6,6 +6,8 @@ mod two_sum;
 mod path_sum;
 mod kth_largest_element;
 
+mod minimum_size_sub_array_sum;
+
 mod compare_version_numbers;
 
 fn main() {
