@@ -11,17 +11,36 @@
  * @param {number} k
  * @return {ListNode}
  */
- var getKthFromEnd = function(head, k) {
-    const map = new Map()
+
+// 解法一：快慢指针
+var getKthFromEnd1 = function(head, k) {
+    let f = head;
+    let s = head;
+
+    while (k > 0) {
+        f = head.next;
+        k--;
+    }
+
+    while(f) {
+        f = f.next;
+        s = s.next;
+    }
+
+    return s;
+};
+
+// 解法二，转化为 map，取数
+var getKthFromEnd2 = function(head, k) {
+    const map = new Map();
     let i = 1;
 
-    let node = head;
-    map.set(i, node);
 
-    while(node.next) {
+    while (head) {
+        map.set(i, head);
+
+        head = head.next;
         i++;
-        map.set(i, node.next);
-        node = node.next;
     }
 
     return map.get(map.size - k + 1);
