@@ -10,6 +10,8 @@ mod minimum_size_sub_array_sum;
 
 mod compare_version_numbers;
 
+mod get_kth_from_end;
+
 fn main() {
     println!("hello rust");
 }
