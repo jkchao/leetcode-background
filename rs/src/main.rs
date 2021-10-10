@@ -12,6 +12,8 @@ mod compare_version_numbers;
 
 mod get_kth_from_end;
 
+mod add_string;
+
 fn main() {
     println!("hello rust");
 }

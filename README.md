@@ -23,6 +23,7 @@
 -   [88-合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)（[JavaScript](./js/src/merge-sorted-array.js) / [Rust](./rs/src/merge_sorted_array.rs)）
 -   [165-比较版本号](https://leetcode-cn.com/problems/compare-version-numbers/solution/bi-jiao-ban-ben-hao-by-leetcode/)([JavaScript](./js/src/compare-version-numbers.js) / [Rust](./rs/src/compare_version_numbers.rs))
 -   [剑指offer22-链表中倒数第k个节点](https://leetcode-cn.com/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/)([JavaScript](./js/src/get-kth-from-end.js) / [Rust](./rs/src/get_kth_from_end.rs))
+-   [字符串相加](https://leetcode-cn.com/problems/add-strings/)([JavaScript](./js/src/add-string.js))
 
 ## 快速选择排序
 
